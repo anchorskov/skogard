@@ -1,0 +1,29 @@
+---
+// src/layouts/BaseLayout.astro
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/site.css";
+
+interface Props {
+  description?: string;
+  title?: string;
+}
+
+const { description, title = "SKOGARD" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head title={title} description={description} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

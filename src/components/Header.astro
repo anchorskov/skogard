@@ -1,0 +1,26 @@
+---
+// src/components/Header.astro
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/join", label: "Join" },
+  { href: "/start", label: "Start" }
+];
+---
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="site-brand" href="/" aria-label="SKOGARD home">
+      <span class="site-brand__mark">SKOGARD</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="site-nav">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

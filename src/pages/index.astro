@@ -1,0 +1,52 @@
+---
+// src/pages/index.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="SKOGARD | Volunteer Network"
+  description="SKOGARD is a volunteer network focused on showing up, listening, and acting together."
+>
+  <section class="hero">
+    <div class="shell hero__inner">
+      <p class="eyebrow">Volunteer Network</p>
+      <h1>SKOGARD</h1>
+      <p class="hero__lede">Show up. Listen. Act.</p>
+      <p class="hero__body">
+        SKŌGARD is building a simple, serious network for people who want to organize, help, and
+        act with others in the places they live.
+      </p>
+      <div class="cta-row" aria-label="Primary actions">
+        <a class="button button--primary" href="/join">Join</a>
+        <a class="button" href="/start">Start a Group</a>
+        <a class="button button--ghost" href="#learn-more">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="learn-more" class="section">
+    <div class="shell grid">
+      <article class="card">
+        <h2>Built for local action</h2>
+        <p>
+          The first version stays focused: clear information, strong calls to action, and a clean
+          base for future volunteer tools.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Ready to grow</h2>
+        <p>
+          The site uses shared components and one global stylesheet so new pages, forms, and
+          lightweight features can be added without unnecessary complexity.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Grounded by purpose</h2>
+        <p>
+          SKOGARD is for people who want practical work, strong local relationships, and a place to
+          begin.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
