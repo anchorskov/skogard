@@ -11,6 +11,7 @@ Core line: **Show up. Listen. Act.**
 
 - Prefer secure, maintainable, accessible code
 - Preserve compatibility with local development and future Cloudflare Pages deployment
+- Use `SKŌGARD` in visible public-facing brand text; use ASCII `SKOGARD` only for technical identifiers, file names, repo names, domains, config keys, and other machine-safe references unless there is a specific reason otherwise
 - Use existing patterns before inventing new ones
 - Keep the file structure understandable
 - Prefer small, clean, reversible changes
@@ -24,6 +25,7 @@ Core line: **Show up. Listen. Act.**
 - Agents should keep the site easy for humans to read and extend
 - Agents should prefer Astro pages, components, and simple CSS unless a stronger reason exists
 - Agents should include exact file paths in change notes
+- Agents should close any local testing or dev ports they open once testing is complete, unless the user explicitly asks to keep a server running
 
 ## Guardrails
 

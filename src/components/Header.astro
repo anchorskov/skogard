@@ -9,11 +9,24 @@ const navItems = [
 
 <header class="site-header">
   <div class="shell site-header__inner">
-    <a class="site-brand" href="/" aria-label="SKOGARD home">
-      <span class="site-brand__mark">SKOGARD</span>
+    <a class="site-brand" href="/" aria-label="SKŌGARD home">
+      <span class="site-brand__mark">SKŌGARD</span>
     </a>
 
-    <nav aria-label="Primary">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation"
+      data-menu-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="primary-nav" class="site-nav-wrap" aria-label="Primary" data-menu-panel>
       <ul class="site-nav">
         {navItems.map((item) => (
           <li>
@@ -24,3 +37,31 @@ const navItems = [
     </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const panel = document.querySelector("[data-menu-panel]");
+
+  if (toggle instanceof HTMLButtonElement && panel instanceof HTMLElement) {
+    const closeMenu = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      panel.dataset.open = "false";
+    };
+
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      panel.dataset.open = String(!isOpen);
+    });
+
+    panel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 640) {
+        closeMenu();
+      }
+    });
+  }
+</script>
